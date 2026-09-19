@@ -9,7 +9,11 @@ connectDb();
 
 const App = express();
 
-App.use(cors());
+App.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 App.use(express.json());
 
 
